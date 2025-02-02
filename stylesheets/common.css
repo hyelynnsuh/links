@@ -28,6 +28,11 @@
 	font-family: var(--shingo);
 }
 
+@font-face {
+	font-family: 'A-OTF Shin Go Pro B';
+	src: local('A-OTF Shin Go Pro B'), url('AOTFShinGoProBold.woff') format('woff');
+}
+
 .futura {
 	font-family: var(--futura);
 }
