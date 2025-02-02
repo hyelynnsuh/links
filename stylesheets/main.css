@@ -1,38 +1,45 @@
 
 /* SCREEN */
 #screen {
-	margin-left: calc(var(--margin)/1.5);
-	margin-right: calc(var(--margin)/1.5);
+	margin-left: var(--margin);
+	margin-right: var(--margin);
+	padding-left: 0;
+	padding-right: 0;
 
 	img {
 		mix-blend-mode: luminosity;
+		display: block;
+		object-fit: cover;
+		overflow: clip;
+		aspect-ratio: 1/1;
 	}
 }
 
 .screen-grid {
 	display: grid;
+	gap: 1rem;
+	width: 18rem;
+	margin: auto;
 	/* grid-template-columns: 2fr 2fr; */
 }
 
 .grid-item {
-	/* border: solid 1px var(--dark-green);
-	border-radius: var(--border-radius); */
+	border: solid 1px var(--dark-green);
+	border-radius: var(--border-radius);
+	width: 18rem;
+	height: 18rem;
+	overflow: hidden;
 }
-
-
-
-
-
 
 
 /* GAMEBOY ELEMENTS */	/* derived from https://codepen.io/amyyf/pen/rJBypJ */
 /* OVERALL BOX AROUND BUTTONS */
 .button-box {
+	background-color: var(--basegray);
 	display: flex;
 	justify-content: space-evenly;
 	gap: 5rem;
 	align-items: center;
-	width: 20rem;
 	height: 8.5rem;
 	margin: auto;
 	position: sticky;
