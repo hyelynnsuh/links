@@ -55,6 +55,7 @@ header {
 	margin-bottom: var(--margin);
 	box-shadow: 0 4px 5px -2px var(--darkbasegray), inset 5px 5px 10px var(--basegray);
 	height: 4rem;
+	border-radius: var(--border-radius) var(--border-radius) 0px 0px;
 }
 
 h1 {
@@ -81,4 +82,16 @@ h1 {
 	color: var(--dark-green);
 	padding: var(--padding);
 	border-radius: calc(var(--border-radius)/1.5);
+}
+
+
+/* TABLET BREAKPOINT */
+@media (min-width: 800px) {
+	
+}
+
+
+/* DESKTOP BREAKPOINT */
+@media (min-width: 1290px) {
+
 }
