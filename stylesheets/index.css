@@ -26,6 +26,7 @@ h3 {
 
 .directions {
 	text-align: center;
+	padding-bottom: calc(var(--padding)/1.8);
 }
 
 .ab-span {
