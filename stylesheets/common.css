@@ -1,0 +1,79 @@
+:root {
+	--font-size: 16px;
+	--root-size: 1.2rem;
+	--futura: "futura-pt", sans-serif;
+	--futura-weight: 500;
+	--futura-style: italic; 
+	--shingo: "A-OTF Shin Go Pro B";
+	--shingo-weight: normal;
+	--shingo-style: normal;
+	--fira: "Fira Mono", serif;
+	--fira-weight: 400;
+	--fira-style: normal;
+	--top-white: rgb(229, 228, 227);
+	--basegray: rgb(195,191,192);
+	--darkbasegray: rgb(94,91,98);
+	--dark-green: rgb(58,66,7);
+	--light-green: rgb(96,109,13);
+	--black: rgb(27,27,29);
+	--blue: rgb(41,39,152);
+	--red: rgb(155,0,64);
+	--margin: 1.5rem;
+	--padding: 1rem;
+	--border-radius: 1.5rem;
+}
+
+/* FONTS */
+.otf {
+	font-family: var(--shingo);
+}
+
+.futura {
+	font-family: var(--futura);
+}
+
+.fira {
+	font-family: var(--fira);
+}
+
+/* BODY */
+body {
+	background-color: var(--basegray);
+	box-shadow: inset 5px 5px 10px #888, inset -5px -5px 10px #fff;
+}
+
+/* HEADER */
+header {
+	text-align: center;
+	background-color: var(--top-white);
+	color: var(--basegray);
+	margin-bottom: var(--margin);
+	box-shadow: 0 4px 5px -2px var(--darkbasegray), inset 5px 5px 10px var(--basegray);
+	height: 4rem;
+}
+
+h1 {
+	color: var(--basegray);
+	padding: var(--padding);
+}
+
+.line {
+	border-left: solid 2px var(--basegray);
+	height: 4rem;
+}
+
+.header-container {
+	display: flex;
+	justify-content: space-evenly;
+	gap: 5rem;
+}
+
+
+/* SCREEN */
+#screen {
+	background-color: var(--light-green);
+	box-shadow: inset 5px 5px 10px var(--dark-green), inset -5px -5px 10px var(--light-green);
+	color: var(--dark-green);
+	padding: var(--padding);
+	border-radius: calc(var(--border-radius)/1.5);
+}
