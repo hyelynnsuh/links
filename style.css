@@ -10,11 +10,14 @@
 	--fira: "Fira Mono", serif;
 	--fira-weight: 400;
 	--fira-style: normal;
-	--top-white: rgb(245,244,242);
+	--top-white: rgb(229, 228, 227);
 	--basegray: rgb(195,191,192);
+	--darkbasegray: rgb(94,91,98);
 	--dark-green: rgb(58,66,7);
 	--light-green: rgb(96,109,13);
 	--black: rgb(27,27,29);
+	--blue: rgb(41,39,152);
+	--red: rgb(155,0,64);
 	--margin: 1.5rem;
 	--padding: 1rem;
 	--border-radius: 1.5rem;
@@ -43,16 +46,27 @@ body {
 
 /* HEADER */
 header {
-	padding: var(--padding);
 	text-align: center;
 	background-color: var(--top-white);
 	color: var(--basegray);
 	margin-bottom: var(--margin);
+	box-shadow: 0 4px 5px -2px var(--darkbasegray), inset 5px 5px 10px var(--basegray);
+	height: 4rem;
 }
 
 h1 {
-	background-color: var(--top-white);
 	color: var(--basegray);
+	padding: var(--padding);
+}
+
+.line {
+	border-left: solid 2px var(--basegray);
+	height: 4rem;
+}
+
+.header-container {
+	display: flex;
+	justify-content: space-evenly;
 }
 
 
@@ -95,14 +109,30 @@ h3 {
 }
 
 
+/* NAME */
+.name {
+	display: flex;
+	margin-left: calc(var(--margin)*1.4);
+	gap: 0.3rem;
+	align-items: center;
+	color: var(--blue);
+}
+
+.my-name {
+	font-size: calc(var(--font-size)*1.2);
+}
+
+
+
 /* GAMEBOY ELEMENTS */	/* derived from https://codepen.io/amyyf/pen/rJBypJ */
 /* OVERALL BOX AROUND BUTTONS */
 .button-box {
 	display: flex;
 	justify-content: space-evenly;
+	gap: 5rem;
 	align-items: center;
 	width: 20rem;
-	height: 10rem;
+	height: 8.5rem;
 	margin: auto;
 	position: relative;
 }
@@ -191,8 +221,8 @@ h3 {
 
 /* A/B BUTTON */
 .ab-button {
-	background-color: var(--black);
-	box-shadow: 0 4px 4px -2px black, inset 2px 2px 4px darkgray, -1px -1px 2px black;
+	background-color: var(--red);
+	box-shadow: 0 4px 4px -2px rgb(132, 0, 0), inset 2px 2px 4px darkgray, -1px -1px 2px rgb(96, 1, 1);
 	border-radius: 50%;
 	font-family: var(--fira);
 	color: var(--basegray);
@@ -207,5 +237,13 @@ h3 {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
+	width: 5rem;
 }
 
+.a {
+	align-self: end;
+}
+
+.b {
+	align-self: start;
+}
