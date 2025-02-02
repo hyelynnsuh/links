@@ -41,6 +41,7 @@
 	font-family:"Futura";
 	src: local('Futura-Medium.woff') url(../assets/futura/Futura-Medium.woff) format('woff');
 	font-style: italic;
+}
 
 .fira {
 	font-family: var(--fira);
@@ -89,16 +90,4 @@ h1 {
 	color: var(--dark-green);
 	padding: var(--padding);
 	border-radius: calc(var(--border-radius)/1.5);
-}
-
-
-/* TABLET BREAKPOINT */
-@media (min-width: 800px) {
-	
-}
-
-
-/* DESKTOP BREAKPOINT */
-@media (min-width: 1290px) {
-
 }
