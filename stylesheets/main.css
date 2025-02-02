@@ -1,3 +1,30 @@
+
+/* SCREEN */
+#screen {
+	margin-left: calc(var(--margin)/1.5);
+	margin-right: calc(var(--margin)/1.5);
+
+	img {
+		mix-blend-mode: luminosity;
+	}
+}
+
+.screen-grid {
+	display: grid;
+	/* grid-template-columns: 2fr 2fr; */
+}
+
+.grid-item {
+	/* border: solid 1px var(--dark-green);
+	border-radius: var(--border-radius); */
+}
+
+
+
+
+
+
+
 /* GAMEBOY ELEMENTS */	/* derived from https://codepen.io/amyyf/pen/rJBypJ */
 /* OVERALL BOX AROUND BUTTONS */
 .button-box {
@@ -8,7 +35,8 @@
 	width: 20rem;
 	height: 8.5rem;
 	margin: auto;
-	position: relative;
+	position: sticky;
+	bottom: 0;
 }
 
 /* ARROWS */
