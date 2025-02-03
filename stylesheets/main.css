@@ -184,7 +184,7 @@
 	.gameboy {
 		display: grid;
 		grid-template-columns: 1fr 5fr 1fr;
-		align-items: center;
+		align-items: start;
 	}
 
 	.arrow-group {
@@ -192,6 +192,9 @@
 		grid-row: 1;
 		justify-self: start;
 		margin-left: var(--margin);
+		position: sticky;
+		top: 0;
+		margin-top: var(--margin);
 	}
 
 	.middle {
@@ -230,6 +233,9 @@
 		grid-column: 3;
 		justify-self: end;
 		margin-right: var(--margin);
+		position: sticky;
+		top: 10;
+		margin-top: var(--margin);
 	}
 
 	.button-box {
