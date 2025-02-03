@@ -174,12 +174,7 @@
 
 /* TABLET BREAKPOINT */
 @media (min-width: 800px) {
-	/* HEADER */
-	.header-container {
-		gap: 10rem;
-	}
-
-
+	
 	/* GAMEBOY */
 	.gameboy {
 		display: grid;

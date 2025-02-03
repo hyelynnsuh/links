@@ -92,3 +92,11 @@ h1 {
 	padding: var(--padding);
 	border-radius: calc(var(--border-radius)/1.5);
 }
+
+
+@media (min-width: 800px) {
+	/* HEADER */
+	.header-container {
+		gap: 10rem;
+	}
+}
