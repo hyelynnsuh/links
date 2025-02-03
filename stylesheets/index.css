@@ -1,3 +1,8 @@
+/* BODY */
+body {
+	min-height: 40rem;
+}
+
 
 /* INTRO */
 #screen {
@@ -207,8 +212,8 @@ h3 {
 	}
 
 	#screen {
-		height: 25rem;
-		width: 35rem;
+		min-height: 23rem;
+		min-width: 33rem;
 		align-items: center;
 	}
 
