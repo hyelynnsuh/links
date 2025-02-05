@@ -228,9 +228,6 @@
 		grid-column: 3;
 		justify-self: end;
 		margin-right: var(--margin);
-		position: sticky;
-		top: 10;
-		margin-top: var(--margin);
 	}
 
 	.button-box {
@@ -245,5 +242,64 @@
 
 	/* MIDDLE */
 	
+
+}
+
+
+/* DESKTOP BREAKPOINT */
+@media (min-width: 1290px) {
+	/* BODY */
+	body {
+		min-height: 70rem;
+	}
+	
+	/* HEADER */
+	header {
+		height: 6rem;
+	}
+
+	h1 {
+		font-size: calc(var(--font-size)*1.8);
+	}
+
+	.line {
+		height: 6rem;
+	}
+
+	.header-container {
+		gap: 20rem;
+	}
+
+
+	/* GAMEBOY */
+	.gameboy {
+		grid-template-columns: 2fr 8fr 2fr;
+	}
+
+	.arrow-group {
+		margin-left: calc(var(--margin)*2.2);
+		height: 8rem;
+		width: 8rem;
+	}
+
+	.ab-flex {
+		margin-right: calc(var(--margin)*1.5);
+		width: 10rem;
+	}
+
+	.ab-button {
+		width: 4rem;
+		height: 4rem;
+	}
+
+	.a, .b {
+		font-size: calc(var(--font-size)*1.6);
+	}
+
+	#screen {
+		min-height: 40rem;
+		min-width: 50rem;
+		margin-top: calc(var(--margin)*1.5);
+	}
 
 }

@@ -273,7 +273,19 @@ h3 {
 	
 	/* HEADER */
 	header {
-		
+		height: 6rem;
+	}
+
+	h1 {
+		font-size: calc(var(--font-size)*1.8);
+	}
+
+	.line {
+		height: 6rem;
+	}
+
+	.header-container {
+		gap: 20rem;
 	}
 
 
@@ -283,16 +295,71 @@ h3 {
 	}
 
 	.arrow-group {
-		margin-left: calc(var(--margin)*2.7);
+		margin-left: calc(var(--margin)*2.2);
+		height: 8rem;
+		width: 8rem;
 	}
 
 	.ab-flex {
-		margin-right: calc(var(--margin)*2.7);
+		margin-right: calc(var(--margin)*1.5);
+		width: 10rem;
+	}
+
+	.ab-button {
+		width: 4rem;
+		height: 4rem;
+	}
+
+	.a, .b {
+		font-size: calc(var(--font-size)*1.6);
 	}
 
 	#screen {
 		min-height: 40rem;
 		min-width: 50rem;
+		margin-top: calc(var(--margin)*1.5);
 	}
 
+
+	/* MIDDLE */
+	/* SCREEN */
+	h2 {
+		font-size: calc(var(--font-size)*2.5);
+		border-radius: calc(var(--border-radius)*3);
+		width: 15rem;
+		margin-bottom: calc(var(--margin)*1.5);
+		margin-top: calc(var(--margin)*1.5);
+	}
+
+	h3 {
+		font-size: calc(var(--font-size)*2.5);
+		margin-bottom: calc(var(--margin)*1.5);
+	}
+
+	#intro-p, .directions {
+		font-size: calc(var(--font-size)*1.7);
+		max-width: 40rem;
+	}
+
+	#intro-p {
+		margin-bottom: calc(var(--margin)*1.6);
+	}
+
+	.ab-span {
+		padding-left: calc(var(--padding)/1.2);
+		padding-right: calc(var(--padding)/1.2);
+	}
+
+	/* NAME */
+	h4 {
+		font-size: calc(var(--font-size)*2.3);
+	}
+
+	.my-name {
+		font-size: calc(var(--font-size)*2.5);
+	}
+
+	.name {
+		gap: 0.8rem;
+	}
 }
