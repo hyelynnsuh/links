@@ -59,8 +59,8 @@ h3 {
 }
 
 
-/* GAMEBOY ELEMENTS */	/* derived from https://codepen.io/amyyf/pen/rJBypJ */
-/* OVERALL BOX AROUND BUTTONS */
+/* GAMEBOY ELEMENTS */	/* modified from https://codepen.io/amyyf/pen/rJBypJ */
+/* OVERALL BOX AROUND BOTH BUTTONS */
 .button-box {
 	display: flex;
 	justify-content: space-evenly;
@@ -83,8 +83,9 @@ h3 {
 
 .up-box {
 	background-color: var(--black);
-	border-radius: 4px 4px 0 0;
-	box-shadow: 2px 2px 4px black, inset 2px 2px 4px darkgray, -1px -1px 2px black;
+	border-radius: 4px 4px 0 0; 
+	/* ADD SHADOWS! */
+	box-shadow: 2px 2px 4px black, inset 2px 2px 4px darkgray, -1px -1px 2px black; 
 	height: 33%;
 	width: 33%;
 	left: 33%;
@@ -144,6 +145,7 @@ h3 {
 	transform: rotate(270deg);
 }
 
+/* MAKE A DENT FOR THE CENTER OF THE ARROWS GROUP */
 .dent {
 	background-color: var(--black);
 	border-radius: 50%;
@@ -170,6 +172,7 @@ h3 {
 
 .ab-flex {
 	display: flex;
+	/* another flex box inside another flex box... inside a grid.. yay! */
 	flex-direction: column;
 	gap: 1rem;
 	width: 5rem;
