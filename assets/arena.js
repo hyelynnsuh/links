@@ -36,12 +36,12 @@ else if (window.location.pathname.includes('main.html')) {
 }
 
 
-// Then our big function for specific-block-type rendering:
+// BLOCKS
 let renderBlock = (block) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.querySelector('#channel-blocks')
 
-	// Links!
+	// LINKS
 	if (block.class == 'Link') {
 		console.log(block)
 		let linkItem =
@@ -70,18 +70,17 @@ let renderBlock = (block) => {
 		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 	}
 
-	// Text!
+	// TEXT
 	else if (block.class == 'Text') {
 		// …up to you!
 	}
 
-	// Uploaded (not linked) media…
+	// UPLOADED MEDIA
 	else if (block.class == 'Attachment') {
-		let attachment = block.attachment.content_type // Save us some repetition
+		let attachment = block.attachment.content_type 
 
-		// Uploaded videos!
+		// UPLOADED VIDS
 		if (attachment.includes('video')) {
-			// …still up to you, but we’ll give you the `video` element:
 			let videoItem =
 				`
 				<div class="grid-item">
@@ -94,7 +93,7 @@ let renderBlock = (block) => {
 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
 		}
 
-		// Uploaded PDFs!
+		// UPLOADED PDFS
 		else if (attachment.includes('pdf')) {
 			let pdfItem =
 				`
@@ -108,7 +107,7 @@ let renderBlock = (block) => {
 			channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
 		}
 
-		// Uploaded audio!
+		// UPLOADED AUDIO
 		else if (attachment.includes('audio')) {
 			let audioItem =
 				`
@@ -123,11 +122,11 @@ let renderBlock = (block) => {
 		}
 	}
 
-	// Linked media…
+	// LINKED MEDIA
 	else if (block.class == 'Media') {
 		let embed = block.embed.type
 
-		// Linked video!
+		// LINKED VIDS
 		if (embed.includes('video')) {
 
 			let linkedVideoItem =
@@ -143,7 +142,7 @@ let renderBlock = (block) => {
 			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 		}
 
-		// Linked audio!
+		// LINKED AUDIO
 		else if (embed.includes('rich')) {
 		let linkedAudioItem =
 			`
@@ -160,7 +159,7 @@ let renderBlock = (block) => {
 }
 
 
-// Now that we have said what we can do, go get the data:
+// GO GET DATA!
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
 	.then((response) => response.json()) // Return it as JSON data
 	.then((data) => { // Do stuff with the data
