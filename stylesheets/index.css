@@ -23,6 +23,7 @@ h2 {
 h3 {
 	font-size: calc(var(--font-size)*1.5);
 	margin-bottom: var(--padding);
+	text-transform: uppercase;
 }
 
 #intro-p {
