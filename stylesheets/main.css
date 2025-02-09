@@ -5,6 +5,8 @@
 	margin-right: var(--margin);
 	padding-left: 0;
 	padding-right: 0;
+	height: 21.5rem;
+	overflow: scroll;
 
 	img {
 		mix-blend-mode: luminosity;
@@ -14,6 +16,10 @@
 		aspect-ratio: 1/1;
 		border-radius: var(--border-radius);
 	}
+}
+
+#screen::-webkit-scrollbar {
+	display: none;
 }
 
 /* IMG GRID */
@@ -49,7 +55,7 @@
 /* GAMEBOY ELEMENTS */	/* derived from https://codepen.io/amyyf/pen/rJBypJ */
 /* OVERALL BOX AROUND BUTTONS */
 .button-box {
-	background-color: var(--basegray);
+
 	display: flex;
 	justify-content: space-evenly;
 	gap: 5rem;
