@@ -61,7 +61,7 @@ let renderBlock = (block) => {
 		let imageItem =
 			`
 			<div class="grid-item">
-				<figure class="title-flex link-block">
+				<figure class="title-flex image-block">
 					<img src="${ block.image.thumb.url }">
 					<figcaption class="description fira">${ block.title }</figcaption>
 				</figure>
@@ -177,5 +177,76 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			// console.log(block) // The data for a single block
 			renderBlock(block) // Pass the single block data to the render function
 		})
+
+
+		// GAMEBOY
+		const images = document.querySelectorAll('#channel-blocks .grid-item img')
+
+		if (images.length === 0) return
+
+		let currentIndex = 0
+		const gridColumns = 3
+
+		// UPDATE SELECTED IMAGE
+		function updateSelection() {
+			images.forEach(img => img.classList.remove('selected'))
+			if (images[currentIndex]){
+				images[currentIndex].classList.add('selected')
+			}
+		}
+
+		// BUTTONS
+		const rightArrow = document.querySelector('.right-box')
+		const leftArrow = document.querySelector('.left-box')
+		const downArrow = document.querySelector('.down-box')
+		const upArrow = document.querySelector('.up-box')
 		
+		// MOVE RIGHT
+		rightArrow.addEventListener('click', () => {
+			if(images.length === 0) return
+			currentIndex = (currentIndex + 1) % images.length
+			updateSelection()
+		})
+
+		// MOVE LEFT
+		leftArrow.addEventListener('click', () => {
+			if(images.length === 0) return
+			currentIndex = (currentIndex - 1) % images.length
+			updateSelection()
+		})
+
+		// MOVE DOWN
+		downArrow.addEventListener('click', () => {
+			if(images.length === 0) return
+			let newIndex = currentIndex + gridColumns
+			if (newIndex < images.length) {
+				currentIndex = newIndex
+				updateSelection()
+			}
+		})
+
+		// MOVE UP
+		upArrow.addEventListener('click', () => {
+			if(images.length === 0) return
+			let newIndex = currentIndex - gridColumns
+			if (newIndex >= 0) {
+				currentIndex = newIndex
+				updateSelection()
+			}
+		})
+
+		updateSelection()
+
+		// KEYBOARD ARROWS
+		document.addEventListener('keydown', (event) => {
+			if (event.key === 'ArrowRight'){
+				currentIndex = (currentIndex + 1) % images.length
+			}
+			else if (event.key === 'ArrowLeft'){
+				currentIndex = (currentIndex - 1) % images.length
+			}
+		})
+
 	})
+
+

@@ -227,6 +227,11 @@
 		box-shadow: inset 0 0 10px var(--bright-green), 0 0 10px var(--bright-green);
 	}
 
+	.selected {
+		border: solid 2px var(--bright-green);
+		box-shadow: inset 0 0 10px var(--bright-green), 0 0 10px var(--bright-green);
+	}
+
 	.ab-flex {
 		grid-column: 3;
 		justify-self: end;
