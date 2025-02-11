@@ -245,8 +245,21 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			else if (event.key === 'ArrowLeft'){
 				currentIndex = (currentIndex - 1) % images.length
 			}
+			else if (event.key === 'ArrowDown') {
+				let newIndex = currentIndex + gridColumns
+				if (newIndex < images.length) {
+					currentIndex = newIndex
+				}
+			}
+			else if (event.key === 'ArrowUp') {
+				let newIndex = currentIndex - gridColumns
+				if (newIndex >= 0) {
+					currentIndex = newIndex
+				}
+			}
+			updateSelection()
 		})
-
+		updateSelection()
 	})
 
 
