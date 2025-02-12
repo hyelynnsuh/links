@@ -152,6 +152,11 @@
 	width: 17px;
 }
 
+.selected {
+	border: solid 2px var(--bright-green);
+	box-shadow: inset 0 0 10px var(--bright-green), 0 0 10px var(--bright-green);
+}
+
 /* A/B BUTTON */
 .ab-button {
 	background-color: var(--red);
@@ -182,7 +187,7 @@
 	align-self: start;
 }
 
-/* A BUTTON POP UP */
+/* A BUTTON POP UP - modified from https://typography-interaction-2425.github.io/topic/javascript/#dialog-preview */
 #dialog {
 	color: var(--dark-green);
 	inset: 0;
@@ -207,10 +212,7 @@
 	background-color: var(--light-green);
 }
 
-.selected {
-	border: solid 2px var(--bright-green);
-	box-shadow: inset 0 0 10px var(--bright-green), 0 0 10px var(--bright-green);
-}
+
 
 
 /* TABLET BREAKPOINT */

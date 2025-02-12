@@ -195,12 +195,14 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			}
 		}
 
-		// BUTTONS
+		// BUTTONS - modified from https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
+		// DEFINE EACH ARROW
 		const rightArrow = document.querySelector('.right-box')
 		const leftArrow = document.querySelector('.left-box')
 		const downArrow = document.querySelector('.down-box')
 		const upArrow = document.querySelector('.up-box')
 		
+		// MOVING THROUGH THE GRID - modified from https://stackoverflow.com/questions/67571080/javascript-how-to-display-current-image-index-and-total-amount-of-images
 		// MOVE RIGHT
 		rightArrow.addEventListener('click', () => {
 			if(images.length === 0) return
@@ -237,7 +239,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 
 		updateSelection()
 
-		// KEYBOARD ARROWS
+		// KEYBOARD ARROWS - modified from https://www.geeksforgeeks.org/javascript-detecting-the-pressed-arrow-key/
 		document.addEventListener('keydown', (event) => {
 			if (event.key === 'ArrowRight'){
 				currentIndex = (currentIndex + 1) % images.length
