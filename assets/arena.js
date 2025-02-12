@@ -192,6 +192,11 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			images.forEach(img => img.classList.remove('selected'))
 			if (images[currentIndex]){
 				images[currentIndex].classList.add('selected')
+				images[currentIndex].scrollIntoView({
+					behavior: 'smooth',
+					block: 'center',
+					inline: 'center'
+				})
 			}
 		}
 
