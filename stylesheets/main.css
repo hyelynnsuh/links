@@ -83,6 +83,7 @@
 	width: 33%;
 	left: 33%;
 	position: absolute;
+	cursor: pointer;
 }
 
 .right-box {
@@ -94,6 +95,7 @@
 	right: 0%;
 	top: 33%;
 	position: absolute;
+	cursor: pointer;
 }
 
 .down-box {
@@ -105,6 +107,7 @@
 	bottom: 0%;
 	left: 33%;
 	position: absolute;
+	cursor: pointer;
 }
 
 .center-box {
@@ -124,6 +127,7 @@
 	width: 33%;
 	top: 33%;
 	position: absolute;
+	cursor: pointer;
 }
 
 .right {
@@ -171,10 +175,36 @@
 
 .a {
 	align-self: end;
+	cursor: pointer;
 }
 
 .b {
 	align-self: start;
+}
+
+/* A BUTTON POP UP */
+#dialog {
+	color: var(--dark-green);
+	inset: 0;
+	place-content: center;
+	place-items: center;
+
+	&[open] {
+		display: grid;
+	}
+}
+
+.close {
+	background-color: var(--light-green);
+	border: solid 1px var(--dark-green);
+	color: var(--dark-green);
+	border-radius: var(--border-radius);
+	padding: var(--padding);
+	cursor: pointer;
+}
+
+::backdrop {
+	background-color: var(--light-green);
 }
 
 .selected {

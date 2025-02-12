@@ -263,3 +263,21 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 	})
 
 
+// A BUTTON POP UP 
+let button = document.querySelector('#info-popup')
+let modal = document.querySelector('#dialog')
+let closeButton = document.querySelector('.close')
+
+button.onclick = () => {
+	modal.showModal()
+}
+
+closeButton.onclick = ()=> {
+	modal.close()
+}
+
+modal.onclick = (event) => {
+	if (event.target == modal) {
+		modal.close()
+	}
+}
