@@ -247,3 +247,26 @@ h1 {
 		gap: 10rem;
 	}
 }
+
+@media (min-width: 1290px) {
+	/* TONE TOGGLE */
+	.knob {
+		width: calc(var(--knob-size)*1.8);
+		height: calc(var(--knob-size)*1.8);
+	}
+
+	.toggle-base {
+		width: 4.5em;
+		height: 1.5em;
+	}
+
+	.bar-container {
+		width: .8em;
+		height: 3.2em;
+	}
+
+	.handle-container {
+		bottom: -115%;
+	}
+
+}
