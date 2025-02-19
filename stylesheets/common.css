@@ -80,7 +80,154 @@ h1 {
 .header-container {
 	display: flex;
 	justify-content: space-evenly;
-	gap: 5rem;
+	align-items: center;
+	gap: 2rem;
+}
+
+/* TONE TOGGLE - modified from https://uiverse.io/adamgiebl/tame-newt-21 */
+.tone-toggle {
+	--knob-size: 1.2em;
+	display: flex;
+	justify-content: center;
+	position: relative;
+}
+
+.toggle-input {
+	position: absolute;
+	z-index: 2;
+	bottom: 50%;
+	border-radius: 50%;
+	transform: rotate(-25deg);
+	transform-origin: 50% 4.75em;
+	width: var(--knob-size);
+	height: var(--knob-size);
+	opacity: 0;
+	font: inherit;
+	transition: transform .24s cubic-bezier(.65, 1.35, .5, 1);
+	cursor: pointer;
+}
+
+.toggle-input:checked {
+	transform: rotate(25deg);
+}
+
+.handle-container {
+	position: absolute;
+	z-index: 1;
+	bottom: -105%;
+	-webkit-mask-image: linear-gradient(to bottom, #000 62.125%, transparent 50%);
+	mask-image: linear-gradient(to bottom, #000 62.125%, transparent 50%);
+	width: 200%;
+	overflow: hidden;
+}
+
+.handle {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transform: rotate(-25deg);
+	transform-origin: bottom center;
+	transition: transform .24s cubic-bezier(.65, 1.35, .5, 1);
+}
+
+.toggle-input:checked + .handle-container > .handle {
+	transform: rotate(25deg);
+}
+
+.knob {
+	position: relative;
+	z-index: 1;
+	border-radius: 50%;
+	width: var(--knob-size);
+	height: var(--knob-size);
+	background-image: radial-gradient(farthest-corner at 70% 30%, #ffffff 4%, #61bdda 75%);
+	transition: transform .24s cubic-bezier(.65, 1.35, .5, 1);
+}
+
+.toggle-input:checked + .handle-container .knob {
+	transform: rotate(-90deg);
+}
+
+.knob::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: inherit;
+	width: 100%;
+	height: 100%;
+	box-shadow: inset 0 0 8px 2px rgb(255 255 255 / .4);
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+
+@media (hover: hover) {
+	.toggle-input:hover + .handle-container .knob::after, .toggle-input:focus-visible + .handle-container .knob::after {
+		opacity: 1;
+	} 
+}
+
+.bar-container {
+	position: relative;
+	width: .4em;
+	height: 2.8em;
+	overflow: hidden;
+}
+
+.toggle-bar {
+	position: absolute;
+	top: calc(var(--knob-size) / 2 * -1);
+	left: 0;
+	width: 100%;
+	height: calc(100% + var(--knob-size) / 2);
+	background-image: linear-gradient(to right, #1f1f1f, #161616, #1f1f1f 45% 55%, #161616, #1f1f1f);
+	background-position-x: .06125em;
+	transition: background-position-x .24s cubic-bezier(.65, 1.35, .5, 1);
+	box-shadow: inset 0 1em .25em rgb(0 0 0 / .4);
+}
+
+.toggle-input:checked + .handle-container .toggle-bar {
+	background-position-x: -.06125em;
+}
+
+.toggle-base {
+	position: relative;
+	border-radius: 3.125em;
+	padding: .25em;
+	width: 3.5em;
+	height: 1.125em;
+	background-color: #2222;
+	background-image: linear-gradient(to bottom, #4444, #2222);
+	box-shadow: 0 -.25em .5em #fff, 0 .25em .5em #d7d7d7;
+	overflow: hidden;
+}
+
+.base-inside {
+	position: relative;
+	border-radius: inherit;
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(to bottom, #1f1f1f, #0f0f0f);
+	box-shadow: inset 0 .0625em rgb( 255 255 255 / .2), inset 0 -.03125em rgb(255 255 255 / 1), inset 0 -.0625em 0.25em rgb(0 0 0 / .1);
+	overflow: hidden;
+}
+
+.base-inside::after {
+	content: '';
+	position: absolute;
+	border-radius: inherit;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(to bottom, #00cfb6, #00a5bf);
+	box-shadow: inherit;
+	opacity: 0;
+	transition: opacity .24s cubic-bezier(.65, 1.35, .5, 1);
+}
+
+.toggle-input:checked ~ .toggle-base .base-inside::after {
+	opacity: 1;
 }
 
 
