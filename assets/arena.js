@@ -303,9 +303,39 @@ modal.onclick = (event) => {
 
 
 // FILTERING BUTTONS
+let channelBlocks = document.querySelector('#channel-blocks')
 let showAllButton = document.querySelector('#show-all')
 let showImageButton = document.querySelector('#show-images')
 let showVideoButton = document.querySelector('#show-vids')
 let showLinkButton = document.querySelector('#show-links')
 
-showVideoButton.onclick = () => {}
+document.querySelectorAll('.show-buttons label').forEach(input => {
+	input.addEventListener('change', function(event) {
+		event.preventDefault()
+
+		const allItems = document.querySelectorAll('.grid-item')
+		const selectedCategories = []
+
+		document.querySelectorAll('.show-buttons input:checked').forEach(checkedInput => {
+			selectedCategories.push(checkedInput.id)
+		})
+
+		allItems.forEach(item => {
+			if (selectedCategories.length === 0) {
+				item.style.display = block
+			} else {
+				item.style.display = selectedCategories.some(category => item.classList.contains(category)) ? 'block' : 'none'
+			}
+		})
+	})
+})
+
+showVideoButton.onclick = () => {
+	channelBlocks.classList.toggle('show-vids')
+	console.log(channelBlocks.classList)
+}
+
+showAllButton.onclick = () => {
+	channelBlocks.classList.add('show-all')
+}
+
