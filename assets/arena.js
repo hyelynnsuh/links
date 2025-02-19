@@ -288,3 +288,24 @@ modal.onclick = (event) => {
 		modal.close()
 	}
 }
+
+
+// TOGGLE BUTTON EXPANDED SCREEN
+// document.addEventListener('DOMContentLoaded', function () { 
+// 	let toggleButton = document.querySelector('#expand-screen')
+// 	let screenElement = document.querySelector('#screen')
+// 	let body = document.body
+
+// 	toggleButton.addEventListener('click', function () {
+// 		body.classList.toggle('expanded-mode')
+// 	})
+// })
+
+
+// FILTERING BUTTONS
+let showAllButton = document.querySelector('#show-all')
+let showImageButton = document.querySelector('#show-images')
+let showVideoButton = document.querySelector('#show-vids')
+let showLinkButton = document.querySelector('#show-links')
+
+showVideoButton.onclick = () => {}

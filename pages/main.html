@@ -22,7 +22,7 @@
 			<div class="header-container">
 				<div class="line"></div>
 				<h1 class="otf">T&I</h1>
-				<div class="tone-toggle"> 
+				<div class="tone-toggle" id="expand-screen"> 
 					<input class="toggle-input" type="checkbox">
 					<div class="handle-container">
 						<div class="handle">
@@ -42,9 +42,39 @@
 		<main>
 
 		<!-- GAMEBOY -->
-			<div class="gameboy">
+			<div class="gameboy" id="gameboy-container">
 			<!--SCREEN  -->
 				<section id="screen" class="middle">
+					<ul class="show-flex">
+						<button id="show-all" class="show-buttons">
+							<label>
+								<input type="checkbox" name="check">
+								<span class="show-highlight"></span>
+								<p class="fira show-p">ALL</p>
+							</label>
+						</button>
+						<button id="show-images" class="show-buttons">
+							<label>
+								<input type="checkbox" name="check">
+								<span class="show-highlight"></span>
+								<p class="fira show-p">I</p>
+							</label>
+						</button>
+						<button id="show-vids" class="show-buttons">
+							<label>
+								<input type="checkbox" name="check">
+								<span class="show-highlight"></span>
+								<p class="fira show-p">V</p>
+							</label>
+						</button>
+						<button id="show-links" class="show-buttons">
+							<label>
+								<input type="checkbox" name="check">
+								<span class="show-highlight"></span>
+								<p class="fira show-p">L</p>
+							</label>
+						</button>
+					</ul>
 					<div class="screen-grid" id="channel-blocks">
 					</div>
 				</section>

@@ -7,6 +7,8 @@
 	padding-right: 0;
 	height: 21.5rem;
 	overflow: scroll;
+	transition: all 0.5s ease-in-out;
+	z-index: -2;
 
 	img {
 		mix-blend-mode: luminosity;
@@ -51,6 +53,74 @@
 	text-align: center;
 }
 
+
+/* FILTER CATEGORY BUTTONS */
+.show-buttons {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.show-buttons label {
+	cursor: pointer;
+	position: relative;
+	width: 3rem;
+	height: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+label input {
+	appearance: none;
+}
+
+label .show-highlight {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(#555353, #363535, #303030);
+	border: 2px solid #222;
+	border-top-width: 4px;
+	border-radius: 6px;
+	box-shadow: inset 0 5px 1px rgba(0, 0, 0, 0.23), 0 5px 5px rgba(0, 0, 0, 0.5), 0 15px 25px rgba(0, 0, 0, 0.35);
+}
+
+.show-buttons label .show-highlight::before {
+	content: '';
+	position: absolute;
+	border-top: 1px solid #fff;
+	inset: 5px 3px;
+	filter: blur(5px);
+}
+
+.show-buttons label input:checked ~ .show-highlight {
+	box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.35), inset 0 5px 5px rgba(0, 0, 0, 0.5), inset 0 15px 25px rgba(0, 0, 0, 0.35);
+}
+
+label .show-p {
+	position: relative;
+	z-index: 10;
+	font-size: 1rem;
+	color: #111;
+}
+
+.show-buttons label input:checked ~ .show-p {
+	color: #fff;
+	text-shadow: 0 0 5px #219cf3, 0 0 8px #219cf3;
+}
+
+.show-flex {
+	display: flex;
+	flex-direction: row;
+	width: 18rem;
+	justify-content: space-between;
+	gap: 1rem;
+	margin: auto;
+	margin-bottom: 1rem;
+	justify-self: center;
+}
 
 /* GAMEBOY ELEMENTS */	/* derived from https://codepen.io/amyyf/pen/rJBypJ */
 /* OVERALL BOX AROUND BUTTONS */
@@ -213,6 +283,14 @@
 }
 
 
+/* EXPANDED SCREEN VERSION */
+.expanded-mode #screen {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
 
 
 /* TABLET BREAKPOINT */
