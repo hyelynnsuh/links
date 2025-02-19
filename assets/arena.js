@@ -29,7 +29,7 @@ if (window.location.pathname.includes('index.html')){
 else if (window.location.pathname.includes('main.html')) {
 	console.log('test2')
 	let placeChannelInfo = (data) => {
-		let channelCount = document.getElementById('#channel-count')
+		let channelCount = document.getElementById('channel-count')
 		
 		channelCount.innerHTML = data.length
 	}
@@ -309,7 +309,13 @@ let showImageButton = document.querySelector('#show-images')
 let showVideoButton = document.querySelector('#show-vids')
 let showLinkButton = document.querySelector('#show-links')
 
-document.querySelectorAll('.show-buttons label').forEach(input => {
+const filterMapping = {
+	'#show-links': 'link-block',
+	'#show-vids': 'video-block',
+	'#show-images': 'image-block'
+}
+
+document.querySelectorAll('.show-buttons input').forEach(input => {
 	input.addEventListener('change', function(event) {
 		event.preventDefault()
 
@@ -317,25 +323,19 @@ document.querySelectorAll('.show-buttons label').forEach(input => {
 		const selectedCategories = []
 
 		document.querySelectorAll('.show-buttons input:checked').forEach(checkedInput => {
-			selectedCategories.push(checkedInput.id)
+			const categoryClass = filterMapping[checkedInput.id]
+			if (categoryClass) {
+				selectedCategories.push(categoryClass)
+			}
 		})
 
 		allItems.forEach(item => {
 			if (selectedCategories.length === 0) {
-				item.style.display = block
+				item.style.display = 'block'
 			} else {
 				item.style.display = selectedCategories.some(category => item.classList.contains(category)) ? 'block' : 'none'
 			}
 		})
 	})
 })
-
-showVideoButton.onclick = () => {
-	channelBlocks.classList.toggle('show-vids')
-	console.log(channelBlocks.classList)
-}
-
-showAllButton.onclick = () => {
-	channelBlocks.classList.add('show-all')
-}
 
