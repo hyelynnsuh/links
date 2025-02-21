@@ -282,6 +282,14 @@ label .show-p {
 	background-color: var(--light-green);
 }
 
+/* FILTER */
+.show-video div, .show-image div, .show-link div {
+	display: none;
+}
+
+.show-video div.video-block, .show-image div.image-block, .show-link div.link-block {
+	display: flex;
+}
 
 /* EXPANDED SCREEN VERSION */
 .expanded-mode #screen {

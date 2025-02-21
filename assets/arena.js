@@ -46,8 +46,8 @@ let renderBlock = (block) => {
 		console.log(block)
 		let linkItem =
 			`
-			<div class="grid-item">
-				<figure class="title-flex link-block">
+			<div class="grid-item link-block">
+				<figure class="title-flex">
 					<img src="${ block.image.thumb.url }">
 					<figcaption class="description fira">${ block.title }</figcaption>
 				</figure>
@@ -60,8 +60,8 @@ let renderBlock = (block) => {
 	else if (block.class == 'Image') {
 		let imageItem =
 			`
-			<div class="grid-item">
-				<figure class="title-flex image-block">
+			<div class="grid-item image-block">
+				<figure class="title-flex">
 					<img src="${ block.image.thumb.url }">
 					<figcaption class="description fira">${ block.title }</figcaption>
 				</figure>
@@ -83,8 +83,8 @@ let renderBlock = (block) => {
 		if (attachment.includes('video')) {
 			let videoItem =
 				`
-				<div class="grid-item">
-					<figure class="title-flex video-block">
+				<div class="grid-item video-block">
+					<figure class="title-flex">
 						<img src="${ block.image.thumb.url }">
 						<figcaption class="description fira">${ block.title }</figcaption>
 					</figure>
@@ -97,8 +97,8 @@ let renderBlock = (block) => {
 		else if (attachment.includes('pdf')) {
 			let pdfItem =
 				`
-				<div class="grid-item">
-					<figure class="title-flex pdf-block">
+				<div class="grid-item pdf-block">
+					<figure class="title-flex">
 						<img src="${ block.image.thumb.url }">
 						<figcaption class="description fira">${ block.title }</figcaption>
 					</figure>
