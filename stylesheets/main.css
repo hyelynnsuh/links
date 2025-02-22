@@ -8,7 +8,7 @@
 	height: 21.5rem;
 	overflow: scroll;
 	transition: all 0.5s ease-in-out;
-	z-index: -2;
+	
 
 	img {
 		mix-blend-mode: luminosity;
