@@ -60,7 +60,7 @@ let renderBlock = (block) => {
 	else if (block.class == 'Image') {
 		let imageItem =
 			`
-			<div class="grid-item image-block">
+			<div class="grid-item image-block media-popup">
 				<figure class="title-flex">
 					<img src="${ block.image.thumb.url }">
 					<figcaption class="description fira">${ block.title }</figcaption>
@@ -267,6 +267,15 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			updateSelection()
 		})
 		updateSelection()
+
+		// MEDIA POP UP 
+		let mediaPopup = document.querySelectorAll('.media-popup')
+		mediaPopup.forEach((mediaPopup) => {
+			let figure = mediaPopup.querySelector('figure')
+			mediaPopup.onclick = () => {
+				figure.classList.toggle('display')
+			}
+		})
 	})
 
 

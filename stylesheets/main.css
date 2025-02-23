@@ -54,6 +54,21 @@
 }
 
 
+/* IMAGE POP UP */
+.media-popup {
+	cursor: pointer;
+
+}
+
+.media-popup figcaption {
+	display: none;
+}
+
+.media-popup figure.display figcaption {
+	display: block;
+}
+
+
 /* FILTER CATEGORY BUTTONS */
 .show-buttons {
 	display: flex;
