@@ -1,3 +1,8 @@
+/* BODY */
+body {
+	min-height: 38rem;
+}
+
 
 /* SCREEN & IMAGES*/
 #screen {
@@ -541,7 +546,7 @@ dialog[open] {
 @media (min-width: 1290px) {
 	/* BODY */
 	body {
-		min-height: 70rem;
+		min-height: 68rem;
 	}
 	
 	/* HEADER */
@@ -600,8 +605,16 @@ dialog[open] {
 
 
 	/* DIALOG MODAL */
+	dialog {
+		margin-bottom: 5rem;
+	}
+
 	dialog[open] {
 		padding-top: calc(var(--padding)*2);
 		padding-bottom: calc(var(--padding)*2);
+
+		p {
+			min-width: 25rem;
+		}
 	}
 }
