@@ -511,11 +511,24 @@ dialog[open] {
 
 	#welcome-modal[open] {
 		grid-template-columns: none;
+		
+		p {
+			font-size: calc(var(--font-size)*1.2);
+		}
+	}
+
+	#welcome-text {
+		min-width: 40rem;
 	}
 
 	#close-modal:hover {
 		background-color: var(--light-green);
 		color: var(--dark-green);
+	}
+
+	/* directions modal */
+	#dialog > p {
+		min-width: 40rem;
 	}
 
 
