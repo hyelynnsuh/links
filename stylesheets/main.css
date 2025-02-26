@@ -55,10 +55,6 @@
 }
 
 
-/* IMAGE POP UP */
-
-
-
 /* FILTER CATEGORY BUTTONS */
 .show-buttons {
 	display: flex;
@@ -297,7 +293,6 @@ label .show-p {
 	background-color: var(--dark-green);
 }
 
-
 .dark-mode {
 	--dark-green: rgb(96,109,13);
 	--light-green: rgb(58,66,7);
@@ -391,9 +386,10 @@ dialog[open] {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 1rem;
-		width: 18rem;
-		margin-left: var(--margin);
-		margin-right: var(--margin);
+		width: max-content;
+		margin: auto;
+		justify-content: center;
+		align-items: center;
 	}
 	
 	.grid-item {
@@ -450,6 +446,26 @@ dialog[open] {
 		img {
 			width: 70%;
 		}
+	}
+
+	/* EXPANDED SCREEN VERSION */
+	.expanded-mode #screen {
+		bottom: 0;
+		justify-content: center;
+		align-items: flex-start;
+	}
+
+	#expanded-mode .screen-grid {
+		align-items: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.dark-mode {
+		--dark-green: rgb(96,109,13);
+		--light-green: rgb(58,66,7);
+		background-color: var(--light-green);
+		color: var(--dark-green);
 	}
 }
 
