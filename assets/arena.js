@@ -46,12 +46,22 @@ let renderBlock = (block) => {
 		console.log(block)
 		let linkItem =
 			`
-			<div class="grid-item link-block">
-				<figure class="title-flex">
+			<li class="grid-item link-block">
+				<button>
+					<figure class="title-flex">
+						<img src="${ block.image.thumb.url }">
+						<figcaption class="description fira">${ block.title }</figcaption>
+					</figure>
+				</button>
+				<dialog>
+					<div>
+						<p class="fira block-title">${ block.title }</p>
+						<p class="fira">${ block.description_html }</p>
+					</div>
 					<img src="${ block.image.thumb.url }">
-					<figcaption class="description fira">${ block.title }</figcaption>
-				</figure>
-			</div>
+					<button class="close fira">Close it!</button>
+				</dialog>
+			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
@@ -68,8 +78,12 @@ let renderBlock = (block) => {
 					</figure>
 				</button>
 				<dialog>
-					<p>I am in a modal overlay!</p>
-					<button class=close>Close it!</button>
+					<div>
+						<p class="fira block-title">${ block.title }</p>
+						<p class="fira">${ block.description_html }</p>
+					</div>
+					<img src="${ block.image.thumb.url }">
+					<button class="close fira">Close it!</button>
 				</dialog>
 			</li>
 			`
@@ -89,12 +103,22 @@ let renderBlock = (block) => {
 		if (attachment.includes('video')) {
 			let videoItem =
 				`
-				<div class="grid-item video-block">
-					<figure class="title-flex">
+				<li class="grid-item video-block">
+					<button>
+						<figure class="title-flex">
+							<img src="${ block.image.thumb.url }">
+							<figcaption class="description fira">${ block.title }</figcaption>
+						</figure>
+					</button>
+					<dialog>
+						<div>
+							<p class="fira block-title">${ block.title }</p>
+							<p class="fira">${ block.description_html }</p>
+						</div>
 						<img src="${ block.image.thumb.url }">
-						<figcaption class="description fira">${ block.title }</figcaption>
-					</figure>
-				</div>
+						<button class="close fira">Close it!</button>
+					</dialog>
+				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
 		}
@@ -103,12 +127,22 @@ let renderBlock = (block) => {
 		else if (attachment.includes('pdf')) {
 			let pdfItem =
 				`
-				<div class="grid-item pdf-block">
-					<figure class="title-flex">
+				<li class="grid-item pdf-block">
+					<button>
+						<figure class="title-flex">
+							<img src="${ block.image.thumb.url }">
+							<figcaption class="description fira">${ block.title }</figcaption>
+						</figure>
+					</button>
+					<dialog>
+						<div>
+							<p class="fira block-title">${ block.title }</p>
+							<p class="fira">${ block.description_html }</p>
+						</div>
 						<img src="${ block.image.thumb.url }">
-						<figcaption class="description fira">${ block.title }</figcaption>
-					</figure>
-				</div>
+						<button class="close fira">Close it!</button>
+					</dialog>
+				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
 		}
@@ -117,12 +151,22 @@ let renderBlock = (block) => {
 		else if (attachment.includes('audio')) {
 			let audioItem =
 				`
-				<div class="grid-item">
-					<figure class="title-flex audio-block">
+				<li class="grid-item">
+					<button>
+						<figure class="title-flex audio-block">
+							<img src="${ block.image.thumb.url }">
+							<figcaption class="description fira">${ block.title }</figcaption>
+						</figure>
+					</button>
+					<dialog>
+						<div>
+							<p class="fira block-title">${ block.title }</p>
+							<p class="fira">${ block.description_html }</p>
+						</div>
 						<img src="${ block.image.thumb.url }">
-						<figcaption class="description fira">${ block.title }</figcaption>
-					</figure>
-				</div>
+						<button class="close fira">Close it!</button>
+					</dialog>
+				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
 		}
@@ -137,12 +181,22 @@ let renderBlock = (block) => {
 
 			let linkedVideoItem =
 				`
-				<div class="grid-item">
-					<figure class="title-flex linked-vid-block">
+				<li class="grid-item">
+					<button>
+						<figure class="title-flex linked-vid-block">
+							<img src="${ block.image.thumb.url }">
+							<figcaption class="description fira">${ block.title }</figcaption>
+						</figure>
+					</button>
+					<dialog>
+						<div>
+							<p class="fira block-title">${ block.title }</p>
+							<p class="fira">${ block.description_html }</p>
+						</div>
 						<img src="${ block.image.thumb.url }">
-						<figcaption class="description fira">${ block.title }</figcaption>
-					</figure>
-				</div>
+						<button class="close fira">Close it!</button>
+					</dialog>
+				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
 			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
@@ -152,12 +206,22 @@ let renderBlock = (block) => {
 		else if (embed.includes('rich')) {
 		let linkedAudioItem =
 			`
-			<div class="grid-item">
-				<figure class="title-flex linked-audio-block">
+			<li class="grid-item">
+				<button>
+					<figure class="title-flex linked-audio-block">
+						<img src="${ block.image.thumb.url }">
+						<figcaption class="description fira">${ block.title }</figcaption>
+					</figure>
+				</button>
+				<dialog>
+					<div>
+						<p class="fira block-title">${ block.title }</p>
+						<p class="fira">${ block.description_html }</p>
+					</div>
 					<img src="${ block.image.thumb.url }">
-					<figcaption class="description fira">${ block.title }</figcaption>
-				</figure>
-			</div>
+					<button class="close fira">Close it!</button>
+				</dialog>
+			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkedAudioItem)
 		}
@@ -171,9 +235,14 @@ let initInteraction = () => {
 	imageBlocks.forEach((block) => {
 		let openButton = block.querySelector('button')
 		let dialog = block.querySelector('dialog')
+		let closeModal = dialog.querySelector('button') 
 
 		openButton.onclick = () => {
 			dialog.showModal()
+		}
+
+		closeModal.onclick = () => {
+			dialog.close()
 		}
 	})
 }

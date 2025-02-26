@@ -262,7 +262,7 @@ label .show-p {
 }
 
 /* A BUTTON POP UP - modified from https://typography-interaction-2425.github.io/topic/javascript/#dialog-preview */
-#dialog {
+/* #dialog {
 	color: var(--dark-green);
 	inset: 0;
 	place-content: center;
@@ -284,14 +284,14 @@ label .show-p {
 
 ::backdrop {
 	background-color: var(--light-green);
-}
+} */
 
 /* FILTER */
-.show-video div, .show-image div, .show-link div {
+.show-video li, .show-image li, .show-link li {
 	display: none;
 }
 
-.show-video div.video-block, .show-image li.image-block, .show-link div.link-block {
+.show-video li.video-block, .show-image li.image-block, .show-link li.link-block {
 	display: flex;
 }
 
@@ -302,6 +302,54 @@ label .show-p {
 	position: fixed;
 	top: 0;
 	left: 0;
+}
+
+
+/* BLOCK DIALOG MODAL POP UP */
+li > button {
+	cursor: pointer;
+}
+
+dialog {
+	color: var(--light-green);
+	inset: 0;
+	place-content: center;
+	place-items: center;
+	margin-left: calc(var(--margin)*2);
+	margin-right: calc(var(--margin)*2);
+	margin-top: calc(var(--margin)*3.8);
+	margin-bottom: calc(var(--margin)*7);
+	background-color: var(--dark-green);
+	border: solid 1px var(--bright-green);
+	border-radius: var(--border-radius);
+}
+
+dialog[open] {
+	display: grid;
+	gap: 0.5rem;
+	padding-top: var(--padding);
+	padding-bottom: var(--padding);
+
+	/* div {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	} */
+
+	.block-title {
+		font-weight: 600;
+	} 
+
+	p {
+		font-family: var(--fira);
+		font-size: calc(var(--font-size)/1.2);
+		min-width: 10rem;
+		text-align: center;
+	}
+
+	img {
+		width: 70%;
+	}
 }
 
 
