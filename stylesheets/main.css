@@ -295,6 +295,7 @@ label .show-p {
 	display: flex;
 }
 
+
 /* EXPANDED SCREEN VERSION */
 .expanded-mode #screen {
 	width: 100vw;

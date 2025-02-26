@@ -231,8 +231,9 @@ let renderBlock = (block) => {
 
 // MODAL - from Eric's Loom
 let initInteraction = () => {
-	let imageBlocks = document.querySelectorAll('.image-block')
-	imageBlocks.forEach((block) => {
+	// instead of repeating the same function for each media type, i made the same modal for all media types with the class "grid-item"
+	let mediaBlocks = document.querySelectorAll('.grid-item')
+	mediaBlocks.forEach((block) => {
 		let openButton = block.querySelector('button')
 		let dialog = block.querySelector('dialog')
 		let closeModal = dialog.querySelector('button') 
