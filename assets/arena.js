@@ -410,6 +410,20 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 		})
 	}
+
+	// ADDING TAB BUTTON PRESS KEY LISTENER!! 
+	document.addEventListener('keydown', function (event) {
+		if (event.key === 'Tab') {
+			event.preventDefault()
+			document.body.classList.toggle('expanded-mode')
+
+			if (document.body.classList.contains('expanded-mode')) {
+				buttonBox.style.display = 'none'
+			} else {
+				buttonBox.style.display = 'flex'
+			}
+		}
+	})
 })
 
 
