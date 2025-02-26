@@ -251,6 +251,7 @@ let initInteraction = () => {
 				dialog.close()
 			}
 		}
+		
 	})
 }
 
@@ -392,14 +393,23 @@ modal.onclick = (event) => {
 
 
 // TOGGLE BUTTON EXPANDED SCREEN
-// document.addEventListener('DOMContentLoaded', function () { 
-// 	let toggleButton = document.querySelector('#expand-screen')
-// 	let screenElement = document.querySelector('#screen')
-// 	let body = document.body
+document.addEventListener('DOMContentLoaded', function () { 
+	const screen = document.getElementById('screen')
+	const buttonBox = document.querySelector('.arrow-group', '.ab-flex')
+	const toneToggle = document.querySelector('.tone-toggle')
+	
+	if (toneToggle) {
+		toneToggle.addEventListener('click', () => {
+			document.body.classList.toggle('dark-mode')
+			document.body.classList.toggle('expanded-mode')
 
-// 	toggleButton.addEventListener('click', function () {
-// 		body.classList.toggle('expanded-mode')
-// 	})
-// })
+			if(document.body.classList.contains('expanded-mode')) {
+				buttonBox.style.display = 'none'
+			} else {
+				buttonBox.style.display = 'flex'
+			}
+		})
+	}
+})
 
 
