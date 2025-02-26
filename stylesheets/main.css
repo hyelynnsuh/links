@@ -494,7 +494,7 @@ dialog[open] {
 		} 
 	
 		p {
-			font-size: calc(var(--font-size)*1.2);
+			font-size: calc(var(--font-size)*1);
 			min-width: 10rem;
 			text-align: center;
 			padding: var(--padding);
@@ -615,6 +615,7 @@ dialog[open] {
 
 		p {
 			min-width: 25rem;
+			font-size: calc(var(--font-size)*1.3);
 		}
 	}
 }
