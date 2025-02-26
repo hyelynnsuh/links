@@ -256,6 +256,19 @@ let initInteraction = () => {
 }
 
 
+// CREDIT WORK
+let renderUser = (user, container) => {
+	let userAddress = 
+	`
+		<address>
+			<h3 class="futura">Made By ${ user.first_name}</h3>
+		</address>
+	`
+	container.insertAdjacentHTML('beforeend', userAddress)
+	
+}
+
+
 // GO GET DATA!
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
 	.then((response) => response.json()) // Return it as JSON data
@@ -368,7 +381,6 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// MEDIA POPUP
 		initInteraction() 
 
-		// WRITE EMMAS NAME
 	})
 
 
