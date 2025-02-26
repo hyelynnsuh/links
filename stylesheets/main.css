@@ -318,6 +318,7 @@ dialog {
 	background-color: var(--dark-green);
 	border: solid 1px var(--bright-green);
 	border-radius: var(--border-radius);
+	min-height: 25rem;
 }
 
 dialog[open] {
@@ -341,12 +342,16 @@ dialog[open] {
 		font-size: calc(var(--font-size)/1.2);
 		min-width: 10rem;
 		text-align: center;
+		margin-bottom: var(--margin);
+		max-width: 15rem;
 	}
 
 	img {
 		width: 70%;
+		margin-bottom: var(--margin);
 	}
 }
+
 
 ::backdrop {
 	background-color: rgb(0 0 0 / 75%);
@@ -397,6 +402,10 @@ dialog[open] {
 	cursor: pointer;
 }
 
+.close:hover {
+	background-color: var(--light-green);
+	color: var(--dark-green);
+}
 
 /* TABLET BREAKPOINT */
 @media (min-width: 800px) {
@@ -468,6 +477,7 @@ dialog[open] {
 	dialog[open] {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
+		
 	
 		/* div {
 			display: flex;
@@ -588,4 +598,10 @@ dialog[open] {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 
+
+	/* DIALOG MODAL */
+	dialog[open] {
+		padding-top: calc(var(--padding)*2);
+		padding-bottom: calc(var(--padding)*2);
+	}
 }

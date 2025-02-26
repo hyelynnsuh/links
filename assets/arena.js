@@ -59,7 +59,7 @@ let renderBlock = (block) => {
 						<p class="fira">${ block.description_html }</p>
 					</div>
 					<img src="${ block.image.thumb.url }">
-					<button class="close fira">Close it!</button>
+					<button class="close fira">exit</button>
 				</dialog>
 			</li>
 			`
@@ -83,7 +83,7 @@ let renderBlock = (block) => {
 						<p class="fira">${ block.description_html }</p>
 					</div>
 					<img src="${ block.image.thumb.url }">
-					<button class="close fira">Close it!</button>
+					<button class="close fira">exit</button>
 				</dialog>
 			</li>
 			`
@@ -116,7 +116,7 @@ let renderBlock = (block) => {
 							<p class="fira">${ block.description_html }</p>
 						</div>
 						<img src="${ block.image.thumb.url }">
-						<button class="close fira">Close it!</button>
+						<button class="close fira">exit</button>
 					</dialog>
 				</li>
 				`
@@ -140,7 +140,7 @@ let renderBlock = (block) => {
 							<p class="fira">${ block.description_html }</p>
 						</div>
 						<img src="${ block.image.thumb.url }">
-						<button class="close fira">Close it!</button>
+						<button class="close fira">exit</button>
 					</dialog>
 				</li>
 				`
@@ -164,7 +164,7 @@ let renderBlock = (block) => {
 							<p class="fira">${ block.description_html }</p>
 						</div>
 						<img src="${ block.image.thumb.url }">
-						<button class="close fira">Close it!</button>
+						<button class="close fira">exit</button>
 					</dialog>
 				</li>
 				`
@@ -194,7 +194,7 @@ let renderBlock = (block) => {
 							<p class="fira">${ block.description_html }</p>
 						</div>
 						<img src="${ block.image.thumb.url }">
-						<button class="close fira">Close it!</button>
+						<button class="close fira">exit</button>
 					</dialog>
 				</li>
 				`
@@ -219,7 +219,7 @@ let renderBlock = (block) => {
 						<p class="fira">${ block.description_html }</p>
 					</div>
 					<img src="${ block.image.thumb.url }">
-					<button class="close fira">Close it!</button>
+					<button class="close fira">exit</button>
 				</dialog>
 			</li>
 			`
