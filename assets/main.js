@@ -21,4 +21,34 @@ showLinkButton.onclick = () => {
 	channelBlocks.classList.add('show-link')
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+	const welcomeModal = document.getElementById('welcome-modal')
+	const closeModal = document.getElementById('close-modal')
+	const welcomeText = document.getElementById('welcome-text')
 
+	const text = "how to play: scroll through and click on an item to see its description. press a for instructions and b to go to the are.na. for more fun, try clicking on the toggle at the top of the screen or use your tab key on your keyboard"
+	let index = 0
+
+	function typeWriter() {
+		if (index < text.length) {
+			welcomeText.textContent += text.charAt(index)
+			index++
+			setTimeout(typeWriter, 70)
+		}
+	}
+
+	if (welcomeModal) {
+		welcomeModal.showModal()
+		typeWriter()
+	}
+
+	closeModal.addEventListener('click', () => {
+		welcomeModal.close()
+	})
+
+	welcomeModal.addEventListener('click', (event) => {
+		if (event.target === welcomeModal) {
+			welcomeModal.close()
+		}
+	})
+})
