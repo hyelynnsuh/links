@@ -55,18 +55,7 @@
 
 
 /* IMAGE POP UP */
-.media-popup {
-	cursor: pointer;
 
-}
-
-.media-popup figcaption {
-	display: none;
-}
-
-.media-popup figure.display figcaption {
-	display: block;
-}
 
 
 /* FILTER CATEGORY BUTTONS */
@@ -302,7 +291,7 @@ label .show-p {
 	display: none;
 }
 
-.show-video div.video-block, .show-image div.image-block, .show-link div.link-block {
+.show-video div.video-block, .show-image li.image-block, .show-link div.link-block {
 	display: flex;
 }
 

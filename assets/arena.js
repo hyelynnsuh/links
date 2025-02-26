@@ -60,12 +60,18 @@ let renderBlock = (block) => {
 	else if (block.class == 'Image') {
 		let imageItem =
 			`
-			<div class="grid-item image-block media-popup">
-				<figure class="title-flex">
-					<img src="${ block.image.thumb.url }">
-					<figcaption class="description fira">${ block.title }</figcaption>
-				</figure>
-			</div>
+			<li class="grid-item image-block media-popup">
+				<button>
+					<figure class="title-flex">
+						<img src="${ block.image.thumb.url }">
+						<figcaption class="description fira">${ block.title }</figcaption>
+					</figure>
+				</button>
+				<dialog>
+					<p>I am in a modal overlay!</p>
+					<button class=close>Close it!</button>
+				</dialog>
+			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 	}
@@ -156,6 +162,20 @@ let renderBlock = (block) => {
 		channelBlocks.insertAdjacentHTML('beforeend', linkedAudioItem)
 		}
 	}
+}
+
+
+// MODAL - from Eric's Loom
+let initInteraction = () => {
+	let imageBlocks = document.querySelectorAll('.image-block')
+	imageBlocks.forEach((block) => {
+		let openButton = block.querySelector('button')
+		let dialog = block.querySelector('dialog')
+
+		openButton.onclick = () => {
+			dialog.showModal()
+		}
+	})
 }
 
 
@@ -268,14 +288,10 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		})
 		updateSelection()
 
-		// MEDIA POP UP 
-		let mediaPopup = document.querySelectorAll('.media-popup')
-		mediaPopup.forEach((mediaPopup) => {
-			let figure = mediaPopup.querySelector('figure')
-			mediaPopup.onclick = () => {
-				figure.classList.toggle('display')
-			}
-		})
+		// MEDIA POPUP
+		initInteraction() 
+
+		// WRITE EMMAS NAME
 	})
 
 
