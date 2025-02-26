@@ -84,8 +84,8 @@ label .show-highlight {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: linear-gradient(#555353, #363535, #303030);
-	border: 2px solid #222;
+	background: linear-gradient(var(--bright-green), var(--light-green), var(--dark-green));
+	border: 2px solid var(--dark-green);
 	border-top-width: 4px;
 	border-radius: 6px;
 	box-shadow: inset 0 5px 1px rgba(0, 0, 0, 0.23), 0 5px 5px rgba(0, 0, 0, 0.5), 0 15px 25px rgba(0, 0, 0, 0.35);
@@ -107,7 +107,7 @@ label .show-p {
 	position: relative;
 	z-index: 10;
 	font-size: 1rem;
-	color: #111;
+	color: var(--dark-green);
 }
 
 .show-buttons label input:checked ~ .show-p {
@@ -261,30 +261,6 @@ label .show-p {
 	align-self: start;
 }
 
-/* A BUTTON POP UP - modified from https://typography-interaction-2425.github.io/topic/javascript/#dialog-preview */
-/* #dialog {
-	color: var(--dark-green);
-	inset: 0;
-	place-content: center;
-	place-items: center;
-
-	&[open] {
-		display: grid;
-	}
-}
-
-.close {
-	background-color: var(--light-green);
-	border: solid 1px var(--dark-green);
-	color: var(--dark-green);
-	border-radius: var(--border-radius);
-	padding: var(--padding);
-	cursor: pointer;
-}
-
-::backdrop {
-	background-color: var(--light-green);
-} */
 
 /* FILTER */
 .show-video li, .show-image li, .show-link li {
@@ -351,6 +327,11 @@ dialog[open] {
 	img {
 		width: 70%;
 	}
+}
+
+::backdrop {
+	background-color: rgb(0 0 0 / 75%);
+	backdrop-filter: blur(8px);
 }
 
 

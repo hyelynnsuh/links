@@ -245,6 +245,12 @@ let initInteraction = () => {
 		closeModal.onclick = () => {
 			dialog.close()
 		}
+
+		dialog.onclick = (event) => {
+			if (event.target == dialog) {
+				dialog.close()
+			}
+		}
 	})
 }
 
